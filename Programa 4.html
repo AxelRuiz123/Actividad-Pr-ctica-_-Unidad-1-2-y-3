@@ -1,55 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertidor de Unidades</title>
+	<title>Programa 4: convertidor a unidades</title>
 </head>
 <body>
-    <h1>Convertidor de Unidades</h1>
 
-    <script>
-        var unidades = ["metro", "centímetro", "pie", "yarda"];
+<h1>Programa cuatro</h1>
+	<p>En este programa se verá la convercion de una catidad solicitada, <br>
+	así como la forma en que el usuario quiere cambiar el tipo de dato que<br>
+	intenta convertir <br>
+<h1>Valores de cada parametro en escala de unidad</h1>
+	</p>
+	
 
-        function convertirUnidades() {
-            var cantidad = parseFloat(prompt("Ingrese la cantidad a convertir:"));
-            var seleccion = parseInt(prompt("Seleccione la unidad de conversión:\n1. Metro\n2. Centímetro\n3. Pie\n4. Yarda")) - 1;
+<script type="text/javascript">
 
-            var resultado;
-            var conversion;
 
-            switch (seleccion) {
-                case 0:
-                    resultado = cantidad * 1.094; // Metro a Yarda
-                    conversion = "Yardas";
-                    break;
-                case 1:
-                    resultado = cantidad * 3.281; // Metro a Pie
-                    conversion = "Pies";
-                    break;
-                case 2:
-                    resultado = cantidad * 39.37; // Metro a Pulgadas
-                    conversion = "Pulgadas";
-                    break;
-                case 3:
-                    resultado = cantidad / 1.094; // Yarda a Metro
-                    conversion = "Metros";
-                    break;
-                default:
-                    alert("Opción no válida");
-                    return;
-            }
+function calculo() 
+{
+//variables
+let ope=0
+let num1=parseInt (prompt("Cantidad de unidades que quiere convertir"))
 
-            document.write("<p>Nombre de la conversión: " + unidades[seleccion] + " a " + conversion + "</p>");
-            document.write("<p>Resultado de la conversión: " + resultado.toFixed(2) + " " + conversion + "</p>");
+let opc= prompt("Elige el numero que indique la conversion deseada: \n 1. Metro a Centimetro \n 2. Metro \
+a pie \n 3. Metro a yarda \n 4. Centimetro a metro \n 5. Centimetro a pie \n 6. Centimetro a Yarda \n 7. \
+Pie a metro \n 8. Pie a Centimetro  \n 9. Pie a Yarda \n 10. Yarda a metro \n 11. Yarda a Centimetro \n \
+12. Yarda a Pie")
 
-            var continuar = prompt("¿Desea realizar otra operación? (Sí/No)").toLowerCase();
-            if (continuar === "sí" || continuar === "si") {
-                convertirUnidades();
-            }
-        }
+switch(opc)
+{
+case "1":
+ope=num1 * 100
+break
+case "2":
+ope=num1 * 3.28084
+break
+case "3":
+ope=num1 * 1.09361
+break
+case "4":
+ope=num1 * 0.01
+break
+case "5":
+ope=num1 * 0.0328084
+break
+case "6": 
+ope=num1 * 0.0109361
+break
+case "7":
+ope=num1 * 0.3048
+break
+case "8":
+ope=num1 * 30.48
+break
+case "9":
+ope=num1 * 0.333333
+break
+case "10":
+ope=num1 * 0.9144
+break
+case "11":
+ope=num1 * 91.44
+break
+case "12":
+ope=num1 * 3
+break
+default:
+document.write("seleccion no válida ")
+}
 
-        convertirUnidades();
-    </script>
+alert("El resultado es: "+ope);
+
+}
+
+calculo();
+let desicion= parseInt(prompt("¿Desea realizar otra operacion? (Escriba el numero correspondiente) \n 1. Si \n 2. No"))
+
+//Desde aqui comienza
+
+while (desicion != 2)
+{
+calculo();
+desicion = parseInt(prompt("¿Desea realizar otra operacion? (Escriba el numero correspondiente) \n 1. Si \n 2. No"))
+}
+
+</script>
 </body>
 </html>
