@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">	    
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Programa 007</title>
+</head>
+<body>
+    <h1>Programa 007</h1>
+    <p>Programa que imprime figura triangular mediante for anidados (triángulo 2)</p>
+
+    <script type='text/javascript'>
+        let filas = 4;
+        let figura = "";
+
+        for (let i = 1; i <= filas; i++) {
+            for (let j = 1; j <= i; j++) {
+                        document.write('#')
+            }            
+            document.write('</br>')
+        }
+        for (let i = filas - 1; i >= 1; i--) {
+            for (let j = 1; j <= i; j++) {                
+                document.write('#')
+            }
+                document.write('</br>')
+        }
+    </script>
+</body>
+</html>
+

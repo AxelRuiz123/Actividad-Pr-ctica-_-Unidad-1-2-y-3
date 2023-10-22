@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de IMC</title>
+    <script>
+        function calcularIMC() {
+            // Obtener los valores ingresados por el usuario
+            var nombre = document.getElementById('nombre').value;
+            var peso = parseFloat(document.getElementById('peso').value);
+            var altura = parseFloat(document.getElementById('altura').value);
+            
+            // Calcular el IMC
+            var imc = peso / (altura * altura);
+
+            // Mostrar el resultado
+            document.getElementById('resultado').innerHTML = "Nombre: " + nombre + "<br> Peso: " + peso + " kg <br> Altura: " + altura + " m <br> IMC: " + imc.toFixed(2);
+
+            // Dar una recomendación
+            if (imc > 25) {
+                document.getElementById('recomendacion').innerHTML = "Recomendación: Peso Alto, le haria bien una dieta y ejercio";
+            } else if (imc >= 22 && imc <= 25) {
+                document.getElementById('recomendacion').innerHTML = "Recomendación: Peso Correcto, vas bien";
+            } else {
+                document.getElementById('recomendacion').innerHTML = "Recomendación: Peso Bajo, ve por unas tortas";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre"><br>
+    <label for="peso">Peso (kg):</label>
+    <input type="number" id="peso"><br>
+    <label for="altura">Altura (m):</label>
+    <input type="number" id="altura"><br>
+    <button onclick="calcularIMC()">Calcular IMC</button>
+    <div id="resultado"></div>
+    <div id="recomendacion"></div>
+</body>
+</html>

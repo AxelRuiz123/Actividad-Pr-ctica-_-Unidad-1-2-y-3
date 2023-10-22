@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ejercicio 1</title>
+</head>
+<body>
+<script type="text/javascript">
+
+let nombre=prompt("Ingresa tu primer nombre: ")
+let apPaterno=prompt("Ingresa tu apellido paterno: ")
+let apMaterno=prompt("Ingresa tu apellido materno: ")
+let año=prompt("Ingresa tu año de nacimiento: ")
+let mes=prompt("Ingresa tu mes de nacimiento (número): ")
+let dia=prompt("Ingresa tu dia de nacimiento (número): ")
+
+
+let rfc = apPaterno.charAt(0) + apPaterno.charAt(1) + apMaterno.charAt(0) + nombre.charAt(0) + 
+			año.charAt(2) + año.charAt(3) + mes + dia;
+
+document.write('Tu RFC es el siguiente: ');
+document.write(rfc.toUpperCase());	
+
+</script>
+</body>
+</html>

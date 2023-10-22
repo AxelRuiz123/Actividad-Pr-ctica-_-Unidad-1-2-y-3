@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Unidades</title>
+</head>
+<body>
+    <h1>Convertidor de Unidades</h1>
+
+    <script>
+        var unidades = ["metro", "centímetro", "pie", "yarda"];
+
+        function convertirUnidades() {
+            var cantidad = parseFloat(prompt("Ingrese la cantidad a convertir:"));
+            var seleccion = parseInt(prompt("Seleccione la unidad de conversión:\n1. Metro\n2. Centímetro\n3. Pie\n4. Yarda")) - 1;
+
+            var resultado;
+            var conversion;
+
+            switch (seleccion) {
+                case 0:
+                    resultado = cantidad * 1.094; // Metro a Yarda
+                    conversion = "Yardas";
+                    break;
+                case 1:
+                    resultado = cantidad * 3.281; // Metro a Pie
+                    conversion = "Pies";
+                    break;
+                case 2:
+                    resultado = cantidad * 39.37; // Metro a Pulgadas
+                    conversion = "Pulgadas";
+                    break;
+                case 3:
+                    resultado = cantidad / 1.094; // Yarda a Metro
+                    conversion = "Metros";
+                    break;
+                default:
+                    alert("Opción no válida");
+                    return;
+            }
+
+            document.write("<p>Nombre de la conversión: " + unidades[seleccion] + " a " + conversion + "</p>");
+            document.write("<p>Resultado de la conversión: " + resultado.toFixed(2) + " " + conversion + "</p>");
+
+            var continuar = prompt("¿Desea realizar otra operación? (Sí/No)").toLowerCase();
+            if (continuar === "sí" || continuar === "si") {
+                convertirUnidades();
+            }
+        }
+
+        convertirUnidades();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salario</title>
+</head>
+<body>
+    <h1>Calculadora de Salario</h1>
+    <label for="horas">Horas trabajadas:</label>
+    <input type="number" id="horas">
+    <br>
+    <label for="pagoBase">Pago base por hora:</label>
+    <input type="number" id="pagoBase">
+    <br>
+    <button onclick="calcularSalario()">Calcular Salario</button>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSalario() {
+            var horasTrabajadas = parseInt(document.getElementById("horas").value);
+            var pagoBase = parseFloat(document.getElementById("pagoBase").value);
+            var salarioTotal = 0;
+
+            if (horasTrabajadas <= 40) {
+                salarioTotal = horasTrabajadas * pagoBase;
+            } else if (horasTrabajadas <= 47) {
+                salarioTotal = (40 * pagoBase) + ((horasTrabajadas - 40) * (2 * pagoBase));
+            } else {
+                salarioTotal = (40 * pagoBase) + (7 * (2 * pagoBase)) + ((horasTrabajadas - 47) * (3 * pagoBase));
+            }
+
+            document.getElementById("resultado").innerHTML = "Salario total: $" + salarioTotal.toFixed(2);
+        }
+    </script>
+</body>
+</html>
